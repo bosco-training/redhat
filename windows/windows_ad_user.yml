@@ -1,4 +1,0 @@
----
-- hosts: windows
-  roles:
-    - { role: win_ad_user }
