@@ -2,8 +2,8 @@
 
 - name: Configure 3teir on OSP
   hosts: jumpbox
-  roles:
-   - { role: osp.facts }
+  role:
+   - role: osp.facts
   tags:
     - osp.facts
 
