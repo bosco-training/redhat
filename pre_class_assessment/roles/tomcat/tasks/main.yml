@@ -18,8 +18,9 @@
     src: index.html.j2
     dest: /usr/share/tomcat/webapps/ansible/index.html
     mode: 0644
-    
-- name: start and enable apache at boot
+
+- block:
+  name: Enabling {{item}} at boot and starting
   service:
     name: httpd
     state: started
