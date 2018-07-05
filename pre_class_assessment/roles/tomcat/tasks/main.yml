@@ -21,10 +21,10 @@
 
 - block:
   name: Enabling {{item}} at boot and starting
-  service:
-    name: httpd
-    state: started
-    enabled: yes
+    service:
+      name: httpd
+      state: started
+      enabled: yes
   with_items:
     - tomcat
     - httpd

@@ -1,9 +1,9 @@
---- # Deploys 3 tier application on openstack instances
+---
 
 - name: Configure 3teir on OSP
   hosts: jumpbox
-  role:
-   - role: osp.facts
+  roles:
+   - { role: osp.facts }
   tags:
     - osp.facts
 
@@ -24,8 +24,9 @@
 
 - name: Setup HTTP and Tomcat
   hosts: apps
+  # gather_facts: false
   roles:
-   - { role: http-tomcat }
+   - { role: tomcat }
   tags:
     - setup-tomcat
 
