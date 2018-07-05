@@ -19,12 +19,11 @@
     dest: /usr/share/tomcat/webapps/ansible/index.html
     mode: 0644
 
-- block:
-  name: Enabling {{item}} at boot and starting
-    service:
-      name: httpd
-      state: started
-      enabled: yes
+- name: Enabling tomcat and httpd services at boot and starting
+  service:
+    name: httpd
+    state: started
+    enabled: yes
   with_items:
     - tomcat
     - httpd
